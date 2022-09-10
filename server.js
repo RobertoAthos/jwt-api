@@ -4,9 +4,11 @@ const mongoose = require('mongoose')
 const app = express()
 const UserRouter = require('./Routes/UserRoutes')
 const AdminRoute = require('./Routes/AdminRoutes')
+const cors = require('cors')
 
 app.use('/user',express.json(),UserRouter)
 app.use('/admin', express.json(), AdminRoute)
+app.use(cors())
 
 const PORT = process.env.PORT || 5000
 
